@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -14,7 +14,7 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -30,4 +30,32 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.dance{
+	color: transparent;
+	background: #003cff;
+	background: linear-gradient(90deg, rgb(160, 35, 198) 0%, rgb(226, 29, 111) 100%);
+	background-clip: text;
+	animation: move 2s linear infinite;
+	background-size: 500%;
+}
+
+@keyframes move {
+	0%{
+		background-position: 0 100%;
+	}
+	
+	50%{
+		background-position: 100% 0;
+	}
+
+	100%{
+		background-position: 0 100%;
+	}
+}
+
+::selection {
+  background: #492E87;
+  color: #f7f7f7;
 }
