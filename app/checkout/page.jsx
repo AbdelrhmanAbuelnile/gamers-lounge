@@ -7,6 +7,16 @@ import { Suspense } from "react";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHER_KEY);
 function page() {
+
+	return(
+		<Suspense>
+			<Payment />
+		</Suspense>
+	)
+
+}
+
+function Payment(){
 	const searchParams = useSearchParams();
 	const options = {
 		mode: "payment",
@@ -14,11 +24,9 @@ function page() {
 		amount: Number(searchParams.get("amount")) * 100,
 	};
 	return (
-		<Suspense>
-			<Elements stripe={stripePromise} options={options}>
+		<Elements stripe={stripePromise} options={options}>
 				<CheckoutForm amount={Number(searchParams.get("amount")) * 100} />
-			</Elements>
-		</Suspense>
+		</Elements>
 	);
 }
 
