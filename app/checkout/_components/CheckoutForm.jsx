@@ -58,7 +58,7 @@ const CheckoutForm = ({ amount }) => {
 		  clientSecret: clientSecret,
 		  elements,
 		  confirmParams: {
-		    return_url: "https://abdelrhmanabuelnile.vercel.app",
+		    return_url: "https://gamers-lounge.vercel.app/payment-confirm",
 		  },
 		});
 
